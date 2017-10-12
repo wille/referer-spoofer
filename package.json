@@ -1,0 +1,21 @@
+{
+  "name": "referer-spoofer-chrome",
+  "version": "1.0.0",
+  "description": "Simple referer header plugin for Chrome that will set the referer header to the current sites hostname",
+  "main": "background.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/redpois0n/referer-spoofer-chrome.git"
+  },
+  "bugs": {
+    "url": "https://github.com/redpois0n/referer-spoofer-chrome/issues"
+  },
+  "homepage": "https://github.com/redpois0n/referer-spoofer-chrome#readme",
+  "dependencies": {
+    "@types/chrome": "0.0.49",
+    "typescript": "^2.5.3"
+  }
+}
