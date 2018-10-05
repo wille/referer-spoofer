@@ -1,16 +1,18 @@
-chrome.webRequest.onBeforeSendHeaders.addListener(
-    function(details) {
-        for (var i = 0; i < details.requestHeaders.length; ++i) {
-			if (details.requestHeaders[i].name === "Referer") {
-				var url = new URL(details.url);
-				
-				details.requestHeaders[i].value = url.protocol + "//" + url.hostname;
-				break;
-			}
-		}
-		
-		return { requestHeaders: details.requestHeaders };
-	},
-	{ urls: ["<all_urls>"] },
-	[ "blocking", "requestHeaders" ]
+browser = chrome || browser;
+
+browser.webRequest.onBeforeSendHeaders.addListener(
+  function(details) {
+    const url = new URL(details.url);
+
+    for (const header of details.requestHeaders) {
+      if (header.name === "Referer") {
+        const newValue = `${url.protocol}//${url.hostname}/`;;
+        console.log(`${header.value} -> ${newValue}`);
+
+        header.value = newValue;
+      }
+    }
+  },
+  { urls: ["<all_urls>"] },
+  ["blocking", "requestHeaders"]
 );

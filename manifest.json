@@ -2,7 +2,7 @@
 	"name": "Referer Spoofer",
 	"version": "0.1",
 	"description": "Set referer to current website host",
-	"background": { 
+	"background": {
 		"scripts": ["background.js"]
 	},
 	"icons": {
@@ -12,6 +12,7 @@
 	"permissions": [
 		"webRequest",
 		"webRequestBlocking",
-		"https://*/*"
+    "https://*/*",
+    "http://*/*"
 	]
 }
