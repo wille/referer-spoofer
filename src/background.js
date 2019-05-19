@@ -1,4 +1,4 @@
-browser = chrome || browser;
+import browser from 'webextension-polyfill';
 
 browser.webRequest.onBeforeSendHeaders.addListener(
   function(details) {
