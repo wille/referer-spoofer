@@ -12,6 +12,10 @@ browser.webRequest.onBeforeSendHeaders.addListener(
         header.value = newValue;
       }
     }
+
+    return {
+      responseHeaders: details.responseHeaders,
+    };
   },
   { urls: ["<all_urls>"] },
   ["blocking", "requestHeaders"]
